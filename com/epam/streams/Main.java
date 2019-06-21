@@ -1,15 +1,10 @@
 package com.epam.streams;
 
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) throws FileNotFoundException {
-        FileCreator creator = new FileCreator();
-        creator.fileName();
-
-
-
+    public static void main(String[] args) throws IOException {
+        ChoiseOfAction choise = new ChoiseOfAction();
     }
 }
