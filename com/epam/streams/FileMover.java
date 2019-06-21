@@ -15,13 +15,12 @@ public class FileMover {
     public void namesOfFile() throws IOException {
         System.out.println("Укажите путь к файлу, который хотите переместить");
         Scanner scanner = new Scanner(System.in);
-        String forCopy = scanner.next();
-        directoryForCopy= new File(forCopy);
+        directoryForCopy= new File(scanner.next());
         System.out.println("Укажите путь, куда хотите переместить файл");
         String forMove =scanner.next();
         directoryForMove= new File(forMove+"\\"+directoryForCopy.getName());
         copyFile(directoryForCopy,directoryForMove);
-        scanner.close();
+        directoryForCopy.delete();
     }
 
     public void copyFile(File original, File copy) throws IOException {
@@ -35,7 +34,6 @@ public class FileMover {
             while ((lenght = in.read(buff))>0){
                 out.write(buff, 0 , lenght);
             }
-            original.delete();
         }finally {
             in.close();
             out.close();

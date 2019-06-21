@@ -17,7 +17,7 @@ public class FileCopier {
         Scanner scanner = new Scanner(System.in);
         directoryForCopy = new File(scanner.next());
         System.out.println("Укажите путь, куда хотите переместить скопированный файл");
-        directoryForMove = new File(scanner.next());
+        directoryForMove = new File(scanner.next()+"\\"+directoryForCopy.getName());
         copyFile(directoryForCopy, directoryForMove);
     }
 
